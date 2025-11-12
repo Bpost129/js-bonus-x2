@@ -1,3 +1,5 @@
+// callback functions
+
 const cars = [
   { make: 'Toyota', yrsOld: 5, mileage: 92399 },
   { make: 'Ford', yrsOld: 12, mileage: 255005 },
@@ -13,4 +15,18 @@ function checkMileage(car) {
   return (car.mileage / car.yrsOld > 20000)
 }
 
-console.log(drivenCars)
+// drivenCars.forEach(car => console.log(car))
+
+// async functions
+
+const colors = ['red', 'green', 'blue']
+
+console.log('Code BEFORE the forEach...')
+
+setTimeout(function() {
+  colors.forEach((color, idx) => {
+    console.log(`${idx + 1} - ${color}`)
+  })
+}, 1000)
+
+console.log('Code AFTER the forEach...')
