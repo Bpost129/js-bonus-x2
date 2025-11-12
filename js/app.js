@@ -7,8 +7,10 @@ const cars = [
   { make: 'Tesla', yrsOld: 3, mileage: 57720 },
 ]
 
-const drivenCars = cars.filter(car => {
+const drivenCars = cars.filter(checkMileage)
+
+function checkMileage(car) {
   return (car.mileage / car.yrsOld > 20000)
-})
+}
 
 console.log(drivenCars)
