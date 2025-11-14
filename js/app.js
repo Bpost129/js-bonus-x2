@@ -50,3 +50,9 @@ function renderLight(cb) {
   setTimeout(cb, lightSequence[curLightIdx].time)
 }
 
+function renderNextLight() {
+  renderLight(renderNextLight)
+  curLightIdx === 0 ? curLightIdx = 2 : curLightIdx--
+}
+
+renderNextLight()
