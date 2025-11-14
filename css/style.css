@@ -1,3 +1,21 @@
 body {
   background-color: grey;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 20vmin;
+  grid-template-rows: repeat(3, 20vmin);
+  border: 2px solid rgb(221, 203, 0);
+}
+
+main div {
+  margin: 2vmin;
+  border-radius: 50%;
+  border: 2px solid rgb(0, 0, 0);
 }
