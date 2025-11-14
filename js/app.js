@@ -30,3 +30,12 @@ setTimeout(function() {
 }, 1000)
 
 console.log('Code AFTER the forEach...')
+
+
+// async demo
+
+const lightSequence = [
+  {color: 'red', time: 3000},
+  {color: 'yellow', time: 1000},
+  {color: 'green', time: 2000},
+]
