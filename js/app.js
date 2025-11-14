@@ -39,3 +39,14 @@ const lightSequence = [
   {color: 'yellow', time: 1000},
   {color: 'green', time: 2000},
 ]
+
+const lightEls = document.querySelectorAll('main > div')
+
+let curLightIdx = 2
+
+function renderLight(cb) {
+  lightEls.forEach(light => light.style.backgroundColor = 'black')
+  lightEls[curLightIdx].style.backgroundColor = lightSequence[curLightIdx].color
+  setTimeout(cb, lightSequence[curLightIdx].time)
+}
+
