@@ -75,16 +75,16 @@ person.intro()
 
 // poorly written class
 
-class Sprite {
-  constructor(color, pos) {
-    this.color = color
-    this.pos = pos
-    this.move = function(direction) {/*...*/}
-    this.rotate = function(direction) {/*...*/}
-    this.accelerate = function() {/*...*/}
-    this.checkCollision = function() {/*...*/}
-  }
-}
+// class Sprite {
+//   constructor(color, pos) {
+//     this.color = color
+//     this.pos = pos
+//     this.move = function(direction) {/*...*/}
+//     this.rotate = function(direction) {/*...*/}
+//     this.accelerate = function() {/*...*/}
+//     this.checkCollision = function() {/*...*/}
+//   }
+// }
 
 // well written class
 
@@ -106,3 +106,38 @@ class Sprite {
   //...other methods
 }
 
+// determining the value of this
+
+// 1. non-method functions
+function thisCheck() {
+  console.log(this)
+}
+// thisCheck()  // window {...} or
+// strict mode
+function thisCheck() {
+  'use strict'
+  console.log(this)
+}
+// thisCheck()  // undefined
+
+// 2. methods
+const ninja = {
+  name: 'JS Ninja',
+  f: thisCheck
+}
+function thisCheck() {
+  console.log(this)
+}
+
+// call thisCheck() as a method
+ninja.f()  // Object {name: "JS Ninja"}
+
+// 3. classes & contructor functions
+// this is set to the new object that is implicitly returned ( see Sprite above )
+
+// 4. Event Handlers
+const myDiv = document.getElementById('red')
+myDiv.addEventListener('click', function() {
+  console.log(this)
+})
+// <div id="red">...
