@@ -72,3 +72,37 @@ const person = {
 }
 
 person.intro()
+
+// poorly written class
+
+class Sprite {
+  constructor(color, pos) {
+    this.color = color
+    this.pos = pos
+    this.move = function(direction) {/*...*/}
+    this.rotate = function(direction) {/*...*/}
+    this.accelerate = function() {/*...*/}
+    this.checkCollision = function() {/*...*/}
+  }
+}
+
+// well written class
+
+class Sprite {
+  constructor(color, pos) {
+    this.color = color
+    this.pos = pos
+  }
+	
+  move(direction) {
+    switch (direction.toUpperCase()) {
+      case 'R':
+        this.pos.x < 999 ? this.pos.x++ : this.pos.x = 0
+        break
+      case 'D':
+        //...additional code
+    }
+  }
+  //...other methods
+}
+
