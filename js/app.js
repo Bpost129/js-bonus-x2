@@ -17,42 +17,58 @@ function checkMileage(car) {
 
 // drivenCars.forEach(car => console.log(car))
 
+
+
 // async functions
 
 const colors = ['red', 'green', 'blue']
 
-console.log('Code BEFORE the forEach...')
+// console.log('Code BEFORE the forEach...')
 
-setTimeout(function() {
-  colors.forEach((color, idx) => {
-    console.log(`${idx + 1} - ${color}`)
-  })
-}, 1000)
+// setTimeout(function() {
+//   colors.forEach((color, idx) => {
+//     console.log(`${idx + 1} - ${color}`)
+//   })
+// }, 1000)
 
-console.log('Code AFTER the forEach...')
+// console.log('Code AFTER the forEach...')
+
 
 
 // async demo
 
-const lightSequence = [
-  {color: 'red', time: 3000},
-  {color: 'yellow', time: 1000},
-  {color: 'green', time: 2000},
-]
+// const lightSequence = [
+//   {color: 'red', time: 3000},
+//   {color: 'yellow', time: 1000},
+//   {color: 'green', time: 2000},
+// ]
 
-const lightEls = document.querySelectorAll('main > div')
+// const lightEls = document.querySelectorAll('main > div')
 
-let curLightIdx = 2
+// let curLightIdx = 2
 
-function renderLight(cb) {
-  lightEls.forEach(light => light.style.backgroundColor = 'black')
-  lightEls[curLightIdx].style.backgroundColor = lightSequence[curLightIdx].color
-  setTimeout(cb, lightSequence[curLightIdx].time)
+// function renderLight(cb) {
+//   lightEls.forEach(light => light.style.backgroundColor = 'black')
+//   lightEls[curLightIdx].style.backgroundColor = lightSequence[curLightIdx].color
+//   setTimeout(cb, lightSequence[curLightIdx].time)
+// }
+
+// function renderNextLight() {
+//   renderLight(renderNextLight)
+//   curLightIdx === 0 ? curLightIdx = 2 : curLightIdx--
+// }
+
+// renderNextLight()
+
+
+
+// this 
+
+const person = {
+  firstName: 'Billy',
+  intro: function() {
+    console.log(`Hello, I'm ${this.firstName}`)
+  }
 }
 
-function renderNextLight() {
-  renderLight(renderNextLight)
-  curLightIdx === 0 ? curLightIdx = 2 : curLightIdx--
-}
-
-renderNextLight()
+person.intro()
